@@ -23,6 +23,8 @@ function Necrosis_Initialize()
 	if NecrosisConfig ~= {} then
 		if (NecrosisConfig.NecrosisLanguage == "enUS") or (NecrosisConfig.NecrosisLanguage == "enGB") then
 			Necrosis_Localization_Dialog_En();
+		elseif	(NecrosisConfig.NecrosisLanguage == "ruRU") then
+			Necrosis_Localization_Dialog_Ru();
 		elseif (NecrosisConfig.NecrosisLanguage == "deDE") then
 			Necrosis_Localization_Dialog_De();
 		else
@@ -30,6 +32,8 @@ function Necrosis_Initialize()
 		end
 	elseif GetLocale() == "enUS" or GetLocale() == "enGB" then
 		Necrosis_Localization_Dialog_En();
+	elseif GetLocale() == "ruRU" then
+		Necrosis_Localization_Dialog_Ru();
 	elseif GetLocale() == "deDE" then
 		Necrosis_Localization_Dialog_De();
 	else
@@ -129,13 +133,15 @@ function Necrosis_Initialize()
 		NecrosisButtonRotate_SliderHigh:SetText("360");
 		
 		if NecrosisConfig.NecrosisLanguage == "deDE" then
+			NecrosisLanguage_Slider:SetValue(4);
+		elseif NecrosisConfig.NecrosisLanguage == "ruRU" then
 			NecrosisLanguage_Slider:SetValue(3);
 		elseif NecrosisConfig.NecrosisLanguage == "enUS" then
 			NecrosisLanguage_Slider:SetValue(2);
 		else
 			NecrosisLanguage_Slider:SetValue(1);
 		end
-		NecrosisLanguage_SliderText:SetText("Langue / Language / Sprache");
+		NecrosisLanguage_SliderText:SetText("Francais / English / Русский / Deutsch");
 		NecrosisLanguage_SliderLow:SetText("");
 		NecrosisLanguage_SliderHigh:SetText("");
         

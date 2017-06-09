@@ -2052,7 +2052,7 @@ function Necrosis_SpellSetup()
 		-- Le rang supérieur est conservé
 		if (string.find(subSpellName, NECROSIS_TRANSLATION.Rank)) then
 			local found = false;
-			local rank = tonumber(strsub(subSpellName, 6, strlen(subSpellName)));
+			local rank = tonumber(strsub(subSpellName, strlen(NECROSIS_TRANSLATION.Rank) + 2, strlen(subSpellName)));
 			for index=1, table.getn(CurrentSpells.Name), 1 do
 				if (CurrentSpells.Name[index] == spellName) then
 			found = true;
